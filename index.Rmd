@@ -68,6 +68,24 @@ class: middle, center
 [`r icons::fontawesome("link")` mskar.github.io](https://mskar.github.io)
 
 ---
+class: top
+
+# Resources
+
+.pull-left[
+- [`r icons::fontawesome("github")` manuscript repo](https://github.com/Digital-Biobank/covid_variant_severity)
+- [`r icons::fontawesome("github")` slides repo](https://github.com/mskar/cat)
+- [`r icons::fontawesome("film")` live slides](https://mskar.github.io/cat)
+
+<img src="images/repo1.png" width="750px"/>
+
+]
+
+.pull-right[
+<img src="images/repo.png" width="750px"/>
+]
+
+---
 
 # Timeline
 
@@ -93,7 +111,6 @@ class: middle
 background-color: white
 
 <img src="images/s1.png" width="950px"/>
-
 
 ```{r example, fig.align='center', fig.retina=3}
 
