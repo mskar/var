@@ -94,6 +94,7 @@ background-color: white
 
 <img src="images/s1.png" width="950px"/>
 
+
 ```{r example, fig.align='center', fig.retina=3}
 
 suppressPackageStartupMessages(library(widgetframe))

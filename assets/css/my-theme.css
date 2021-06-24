@@ -338,17 +338,6 @@ h4 {
   font-size: 1.8em;
 }
 
-.freight-slide {
-  background-image: 
-    linear-gradient(
-      rgba(59, 66, 69, .8),
-      rgba(59, 66, 69, .8)
-    ),
-    /* your image */
-    url(../../images/freight.jpg);
-  background-size: cover;
-}
-
 .emphasis {
   font-family: 'Commissioner';
   text-transform: uppercase;
