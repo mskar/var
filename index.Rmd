@@ -52,7 +52,7 @@ class: middle, center, inverse
 
 ---
 name: hello
-class: middle, center, inverse
+class: middle, center
 
 
 ### `r rmarkdown::metadata$author`
@@ -68,7 +68,13 @@ class: middle, center, inverse
 [`r icons::fontawesome("link")` mskar.github.io](https://mskar.github.io)
 
 ---
+class: middle, center, inverse
+
+## .big-text[Overview]
+
+---
 class: middle
+background-color: white
 
 
 <img src="images/s1.png" width="950px"/>
@@ -94,469 +100,63 @@ widgetframe::frameWidget(l)
 ```
 
 
+---
+class: middle, center, inverse
+
+## .big-text[Figure 1A]
+
 
 ---
 background-image: url(images/1a.png)
 background-size: contain
-class: bottom
 
 ---
-name: glue
-class: middle
-
-.left-column[
-![](images/2.png)
-]
-
----
-template: glue
-
-.right-column[
-# Let's start with glue
-
-
-https://glue.tidyverse.org/index.html
-]
-
----
-template: glue
-
-.right-column[
-
-# Use glue in chunks
-
-.panelset[
-.panel[.panel-name[What you code]
-]
-
-.panel[.panel-name[What you see]
-]
-
-
-]
-]
-
----
-template: glue
-
-.right-column[
-
-# Use glue inline
-
-.panelset[
-.panel[.panel-name[What you code]
-The show has aired on `` `r
-
-]
-
-.panel[.panel-name[What you see]
-abc
-]
-]
-]
-
----
-name: epoxy
-class: middle
-
-.left-column[
-![](images/2.png)
-]
-
----
-template: epoxy
-
-.right-column[
-
-# Let's level up: epoxy
-
-Epoxy gives `knitr` a new **engine**.
-
-### Why?
-
-This helps us meld our data and text in a whole new way.
-]
-
----
-template: epoxy
-
-.right-column[
-
-# Fire up the glue engine
-
-.panelset[
-.panel[.panel-name[What you code]
-abc
-
-]
-.panel[.panel-name[What you see]
-def
-]
-]
-]
-
----
-template: epoxy
-
-.right-column[
-
-# Add data
-
-.panelset[
-.panel[.panel-name[What you code]
-
-Choose how vectors are collapsed by adding `*`, `&` or `|` to the end of the expression.
-
-]
-.panel[.panel-name[What you see]
-abc
-]
-]
-]
-
----
-template: epoxy
-
-.right-column[
-
-# The oxford comma way
-
-.panelset[
-.panel[.panel-name[What you code]
-
-Use `.transformer` to change.
-
-]
-.panel[.panel-name[What you see]
-The show has aired on.
-```
-
-
-]
-]
-]
-
----
-template: epoxy
-
-.right-column[
-
-# Epoxy is *vectorized*
-
-.panelset[
-.panel[.panel-name[Data]
-
-abc
-
-]
-.panel[.panel-name[What you code]
-
-
-def
-]
-
-.panel[.panel-name[What you see]
-
-ghi
-
-
-]
-]
-]
-
----
-background-image: url("images/2.png")
-background-position: right
-background-size: contain
 class: middle, center, inverse
 
-.pull-left[
-
-# What about parameters?
-]
-
----
-name: parameters
-
-# The parameters two-step
-
-.pull-left[
-
-abc
-
-]
-
----
-template: parameters
-
---
-
-.pull-right[
-
-abc
-
-]
-
----
-template: parameters
-
---
-
-.pull-right[
-
-abc
-
-]
-
----
-template: parameters
-
---
-
-.pull-right[
-2\. Use in code with epoxy!
-
-
-]
+## .big-text[Figure 1B]
 
 
 ---
-template: parameters
-
-
-.pull-right[
-2\. Use in code with epoxy!
-
-]
-
-
-
----
-class: middle
-
-# Two main flavors of parameterized reports
-
---
-
-.pull-left[
-
-abc
-
-]
-
---
-
-default
-
-]
-
----
-class: middle
-
-# Two main modes for rendering parameterized reports
-
---
-
-.pull-left[
-
-abc
-
-]
-
---
-
-.pull-right[
-
-def
-
-]
-
----
-background-image: url("images/2.png")
-background-position: right
+background-image: url(images/1b.png)
 background-size: contain
+
+
+---
 class: middle, center, inverse
 
-.pull-left[
-
-# The grand params finale
-
-]
----
-class: inverse, middle, center
-
-.pull-left[
-
-So, we know parameters flow .emphasis[down] by affecting code/text in the body of your document.
-
-]
-
---
-
-.pull-right[
-
-But parameters can also flow .emphasis[up] to our YAML, our file output names, and our document's metadata.
-
-]
+## .big-text[Figure 1C]
 
 ---
-
-# Use params inside YAML fields
-
-
----
-
-# Use params inside `rmarkdown::render`
-
-.panelset[
-.panel[.panel-name[Script]
-
-Here, I'm overriding the name of the `output_file` and the `theme`.
-
-
-]
-
-.panel[.panel-name[Args]
-
-You can replace anything that is an argument to [`rmarkdown::render()`](`r downlit::autolink_url("rmarkdown::render()")`)
-
-.emphasis[But]...this won't actually change the valentine itself!
-
-]
-]
+background-image: url(images/1c.png)
+background-size: contain
 
 ---
+class: middle, center, inverse
 
-# Use params to replace param values
-
-Now, I'm actually making a valentine for Sophie!
-
+## .big-text[Figure 2]
 
 ---
-
-# Use params to replace param values
-
-You can *also* .emphasis[replace anything that is a parameter...]
-
-
----
-
-# Use params to replace YAML fields
-
-
---
-
-.panelset[
-.panel[.panel-name[Step 1]
-abc
-]
-
-.panel[.panel-name[Step 2]
-def
-
-]
-
-]
-
----
-
-# Use params to replace YAML fields
-
-abc
-
---
-
-.panelset[
-.panel[.panel-name[Step 1]
-
-abc
-
-]
-
-.panel[.panel-name[Step 2]
-
-def
-
-]
-
-]
-
----
-class: middle, left, pink
 background-image: url(images/2.png)
-background-position: right bottom
-background-size: 50%
-
-
-# Using YAML with strings and glue
-
---
-
-Use params inside YAML fields &rarr; dynamic YAML
-
---
-
-Use params inside `rmarkdown::render` &rarr; dynamic render
-
---
-
-Use params to replace param values &rarr; dynamic params
-
---
-
-Use params to replace YAML fields &rarr; dynamic metadata
-
+background-size: contain
 
 ---
+class: middle, center, inverse
 
-# Batch render
-
-[`_render_batch.R`](https://github.com/apreshill/baker-valentines/blob/master/_render_batch.R)
-
-.panelset[
-.panel[.panel-name[The setup]
-
-abc
-
-]
-
-.panel[.panel-name[The data]
-
-def
-
-]
-
-.panel[.panel-name[The play]
-
-ghi
-
-]
-
-]
+## .big-text[Figure S2]
 
 ---
-class: middle
+background-image: url(images/s2.png)
+background-size: contain
 
-# Change what the knit button does
+---
+class: middle, center, inverse
 
-.pull-left[
+## .big-text[Figure S5]
 
-### Add your R script
+---
+background-image: url(images/s5.png)
+background-size: contain
 
-Recommended: name it `_render.R`, and it .emphasis[must] be of the form:
-
-]
-
---
-
-.pull-right[
-
-### Add to YAML with `knit:` key
-
-`source` your script, and you .emphasis[must] end this with `$value`
-
-
-]
 
 ---
 name: goodbye
