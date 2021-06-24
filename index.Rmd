@@ -1,0 +1,590 @@
+---
+title: "Coronavirus variants predict infection severity"
+subtitle: "From raw data to a peer-reviewed publication in <1 year"
+author: Martin Skarzynski
+role: Lead Scientist, Booz Allen Hamilton
+company: '@BoozAllen'
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    anchor_sections: FALSE
+    css: ["default", "assets/css/my-theme.css", "assets/css/my-fonts.css"]
+    seal: false
+    lib_dir: libs
+    nature:
+      highlightStyle: solarized-light
+      highlightLanguage: ["python"]
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r setup, include=FALSE}
+library(xaringanExtra)
+xaringanExtra::use_panelset()
+
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+```
+
+class: title-slide, right, middle
+background-image: url("https://www.statnews.com/wp-content/uploads/2020/02/Coronavirus-CDC-645x645.jpg")
+background-position: left
+background-size: contain
+
+.pull-right[
+
+# `r rmarkdown::metadata$title`
+
+## `r rmarkdown::metadata$subtitle`
+
+### `r rmarkdown::metadata$author`
+
+### `r Sys.Date()`
+]
+
+
+---
+class: middle, center, inverse
+
+## .big-text[Greetings!]
+
+
+---
+name: hello
+class: middle, center, inverse
+
+
+### `r rmarkdown::metadata$author`
+
+<img style="border-radius: 50%;" src="https://github.com/mskar.png" width="150px"/>
+
+### `r rmarkdown::metadata$role`
+
+### `r rmarkdown::metadata$company`
+
+[`r icons::fontawesome("github")` @mskar](https://github.com/mskar)
+[`r icons::fontawesome("twitter")` @marskar](https://twitter.com/marskar)
+[`r icons::fontawesome("link")` mskar.github.io](https://mskar.github.io)
+
+---
+class: middle
+
+
+<img src="images/s1.png" width="950px"/>
+
+```{r example, fig.align='center', fig.retina=3}
+
+suppressPackageStartupMessages(library(widgetframe))
+
+
+l=DiagrammeR::mermaid("
+
+graph LR
+D[FASTA files]-- Minimap2 --> E[VCF data]
+E -- SnpEff & SnpSift --> F[Annotated VCF data]
+F -- pandas.read_csv --> G[Long dataframe]
+G -- pandas.pivot --> H[Wide dataframe]
+A[JSON files] -- json.loads --> B[patient metadata dictionary]
+B -- pandas.join --> C[Modeling Data]
+H -- pandas.join --> C
+")
+
+widgetframe::frameWidget(l)
+```
+
+
+
+---
+background-image: url(images/1a.png)
+background-size: contain
+class: bottom
+
+---
+name: glue
+class: middle
+
+.left-column[
+![](images/2.png)
+]
+
+---
+template: glue
+
+.right-column[
+# Let's start with glue
+
+
+https://glue.tidyverse.org/index.html
+]
+
+---
+template: glue
+
+.right-column[
+
+# Use glue in chunks
+
+.panelset[
+.panel[.panel-name[What you code]
+]
+
+.panel[.panel-name[What you see]
+]
+
+
+]
+]
+
+---
+template: glue
+
+.right-column[
+
+# Use glue inline
+
+.panelset[
+.panel[.panel-name[What you code]
+The show has aired on `` `r
+
+]
+
+.panel[.panel-name[What you see]
+abc
+]
+]
+]
+
+---
+name: epoxy
+class: middle
+
+.left-column[
+![](images/2.png)
+]
+
+---
+template: epoxy
+
+.right-column[
+
+# Let's level up: epoxy
+
+Epoxy gives `knitr` a new **engine**.
+
+### Why?
+
+This helps us meld our data and text in a whole new way.
+]
+
+---
+template: epoxy
+
+.right-column[
+
+# Fire up the glue engine
+
+.panelset[
+.panel[.panel-name[What you code]
+abc
+
+]
+.panel[.panel-name[What you see]
+def
+]
+]
+]
+
+---
+template: epoxy
+
+.right-column[
+
+# Add data
+
+.panelset[
+.panel[.panel-name[What you code]
+
+Choose how vectors are collapsed by adding `*`, `&` or `|` to the end of the expression.
+
+]
+.panel[.panel-name[What you see]
+abc
+]
+]
+]
+
+---
+template: epoxy
+
+.right-column[
+
+# The oxford comma way
+
+.panelset[
+.panel[.panel-name[What you code]
+
+Use `.transformer` to change.
+
+]
+.panel[.panel-name[What you see]
+The show has aired on.
+```
+
+
+]
+]
+]
+
+---
+template: epoxy
+
+.right-column[
+
+# Epoxy is *vectorized*
+
+.panelset[
+.panel[.panel-name[Data]
+
+abc
+
+]
+.panel[.panel-name[What you code]
+
+
+def
+]
+
+.panel[.panel-name[What you see]
+
+ghi
+
+
+]
+]
+]
+
+---
+background-image: url("images/2.png")
+background-position: right
+background-size: contain
+class: middle, center, inverse
+
+.pull-left[
+
+# What about parameters?
+]
+
+---
+name: parameters
+
+# The parameters two-step
+
+.pull-left[
+
+abc
+
+]
+
+---
+template: parameters
+
+--
+
+.pull-right[
+
+abc
+
+]
+
+---
+template: parameters
+
+--
+
+.pull-right[
+
+abc
+
+]
+
+---
+template: parameters
+
+--
+
+.pull-right[
+2\. Use in code with epoxy!
+
+
+]
+
+
+---
+template: parameters
+
+
+.pull-right[
+2\. Use in code with epoxy!
+
+]
+
+
+
+---
+class: middle
+
+# Two main flavors of parameterized reports
+
+--
+
+.pull-left[
+
+abc
+
+]
+
+--
+
+default
+
+]
+
+---
+class: middle
+
+# Two main modes for rendering parameterized reports
+
+--
+
+.pull-left[
+
+abc
+
+]
+
+--
+
+.pull-right[
+
+def
+
+]
+
+---
+background-image: url("images/2.png")
+background-position: right
+background-size: contain
+class: middle, center, inverse
+
+.pull-left[
+
+# The grand params finale
+
+]
+---
+class: inverse, middle, center
+
+.pull-left[
+
+So, we know parameters flow .emphasis[down] by affecting code/text in the body of your document.
+
+]
+
+--
+
+.pull-right[
+
+But parameters can also flow .emphasis[up] to our YAML, our file output names, and our document's metadata.
+
+]
+
+---
+
+# Use params inside YAML fields
+
+
+---
+
+# Use params inside `rmarkdown::render`
+
+.panelset[
+.panel[.panel-name[Script]
+
+Here, I'm overriding the name of the `output_file` and the `theme`.
+
+
+]
+
+.panel[.panel-name[Args]
+
+You can replace anything that is an argument to [`rmarkdown::render()`](`r downlit::autolink_url("rmarkdown::render()")`)
+
+.emphasis[But]...this won't actually change the valentine itself!
+
+]
+]
+
+---
+
+# Use params to replace param values
+
+Now, I'm actually making a valentine for Sophie!
+
+
+---
+
+# Use params to replace param values
+
+You can *also* .emphasis[replace anything that is a parameter...]
+
+
+---
+
+# Use params to replace YAML fields
+
+
+--
+
+.panelset[
+.panel[.panel-name[Step 1]
+abc
+]
+
+.panel[.panel-name[Step 2]
+def
+
+]
+
+]
+
+---
+
+# Use params to replace YAML fields
+
+abc
+
+--
+
+.panelset[
+.panel[.panel-name[Step 1]
+
+abc
+
+]
+
+.panel[.panel-name[Step 2]
+
+def
+
+]
+
+]
+
+---
+class: middle, left, pink
+background-image: url(images/2.png)
+background-position: right bottom
+background-size: 50%
+
+
+# Using YAML with strings and glue
+
+--
+
+Use params inside YAML fields &rarr; dynamic YAML
+
+--
+
+Use params inside `rmarkdown::render` &rarr; dynamic render
+
+--
+
+Use params to replace param values &rarr; dynamic params
+
+--
+
+Use params to replace YAML fields &rarr; dynamic metadata
+
+
+---
+
+# Batch render
+
+[`_render_batch.R`](https://github.com/apreshill/baker-valentines/blob/master/_render_batch.R)
+
+.panelset[
+.panel[.panel-name[The setup]
+
+abc
+
+]
+
+.panel[.panel-name[The data]
+
+def
+
+]
+
+.panel[.panel-name[The play]
+
+ghi
+
+]
+
+]
+
+---
+class: middle
+
+# Change what the knit button does
+
+.pull-left[
+
+### Add your R script
+
+Recommended: name it `_render.R`, and it .emphasis[must] be of the form:
+
+]
+
+--
+
+.pull-right[
+
+### Add to YAML with `knit:` key
+
+`source` your script, and you .emphasis[must] end this with `$value`
+
+
+]
+
+---
+name: goodbye
+class: pink, bottom
+
+.pull-left[
+### Sincere thanks
+to my co-authors:
++ Jameson D. Voss
++ Erin M. McAuley
++ Ezekiel J. Maier
++ Thomas Gibbons
++ Anthony C. Fries
++ Richard R. Chapleau
+]
+
+
+.pull-right[
+.right[
+<img style="border-radius: 50%;" src="https://github.com/mskar.png" width="150px"/>
+
+# Thank you!
+
+### Find me at...
+
+[`r icons::fontawesome("twitter")` @marskar](http://twitter.com/marskar)
+[`r icons::fontawesome("github")` @mskar](http://github.com/mskar)
+[`r icons::fontawesome("link")` mskar.github.io](https://mskar.github.io)
+]
+]
+
