@@ -68,14 +68,29 @@ class: middle, center
 [`r icons::fontawesome("link")` mskar.github.io](https://mskar.github.io)
 
 ---
+
+# Timeline
+
+- 2020-08: Start
+- 2020-10: [Manuscript](https://www.medrxiv.org/content/10.1101/2020.12.01.20242149v1) posted [medRxiv](https://www.medrxiv.org) preprint server `r emo::ji("popper")`
+- 2020-10: Manuscript submitted to [Evolution, Medicine, and Public Health](https://academic.oup.com/emph)
+- 2021-02: Manuscript sent back for review 1
+- 2021-04: Manuscript sent back for review 2
+- 2021-06: Manuscript accepted `r emo::ji("confetti")`
+
+
+<img src="images/medrxiv.png" width="750px"/>
+
+---
 class: middle, center, inverse
 
 ## .big-text[Overview]
 
+## Study design and results summary
+
 ---
 class: middle
 background-color: white
-
 
 <img src="images/s1.png" width="950px"/>
 
@@ -83,28 +98,44 @@ background-color: white
 
 suppressPackageStartupMessages(library(widgetframe))
 
-
 l=DiagrammeR::mermaid("
 
 graph LR
 D[FASTA files]-- Minimap2 --> E[VCF data]
 E -- SnpEff & SnpSift --> F[Annotated VCF data]
-F -- pandas.read_csv --> G[Long dataframe]
-G -- pandas.pivot --> H[Wide dataframe]
+F -- pandas.read_csv & pandas.pivot --> G[Wide dataframe]
 A[JSON files] -- json.loads --> B[patient metadata dictionary]
 B -- pandas.join --> C[Modeling Data]
-H -- pandas.join --> C
+G -- pandas.join --> C
 ")
 
 widgetframe::frameWidget(l)
 ```
 
+---
+class: middle, center, inverse
+
+## .big-text[Figure S2]
+
+## Composition of patient outcome groups
+
+---
+background-image: url(images/s2.png)
+background-size: contain
+
+---
+class: middle, center, inverse
+
+## .big-text[Figure 1]
+
+## Overview of SARS-CoV-2 variants selected from GISAID data
 
 ---
 class: middle, center, inverse
 
 ## .big-text[Figure 1A]
 
+## Negative log10 p-values of variant association with Severe outcome group plotted against SARS-CoV-2 variant genome position
 
 ---
 background-image: url(images/1a.png)
@@ -115,16 +146,18 @@ class: middle, center, inverse
 
 ## .big-text[Figure 1B]
 
+## Log2 odds ratios of Severe versus Mild outcome groups plotted against SARS-CoV-2 variant genome position
 
 ---
 background-image: url(images/1b.png)
 background-size: contain
 
-
 ---
 class: middle, center, inverse
 
 ## .big-text[Figure 1C]
+
+## Log2 odds ratios of Severe versus Mild outcome groups plotted against log10 frequency of variants in the patient subpopulation
 
 ---
 background-image: url(images/1c.png)
@@ -135,6 +168,8 @@ class: middle, center, inverse
 
 ## .big-text[Figure 2]
 
+## Comparison of nested logistic regression models
+
 ---
 background-image: url(images/2.png)
 background-size: contain
@@ -142,21 +177,13 @@ background-size: contain
 ---
 class: middle, center, inverse
 
-## .big-text[Figure S2]
-
----
-background-image: url(images/s2.png)
-background-size: contain
-
----
-class: middle, center, inverse
-
 ## .big-text[Figure S5]
+
+##  Logistic regression model learning curve
 
 ---
 background-image: url(images/s5.png)
 background-size: contain
-
 
 ---
 name: goodbye
