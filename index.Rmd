@@ -49,7 +49,6 @@ class: middle, center, inverse
 
 ## .big-text[Greetings!]
 
-
 ---
 name: hello
 class: middle, center
@@ -90,8 +89,8 @@ class: top
 # Timeline
 
 - 2020-08: Start
-- 2020-10: [Manuscript](https://www.medrxiv.org/content/10.1101/2020.12.01.20242149v1) posted [medRxiv](https://www.medrxiv.org) preprint server `r emo::ji("popper")`
-- 2020-10: Manuscript submitted to [Evolution, Medicine, and Public Health](https://academic.oup.com/emph)
+- 2020-12: [Manuscript](https://www.medrxiv.org/content/10.1101/2020.12.01.20242149v1) posted [medRxiv](https://www.medrxiv.org) preprint server `r emo::ji("popper")`
+- 2020-12: Manuscript submitted to [Evolution, Medicine, and Public Health](https://academic.oup.com/emph)
 - 2021-02: Manuscript sent back for review 1
 - 2021-04: Manuscript sent back for review 2
 - 2021-06: Manuscript accepted `r emo::ji("confetti")`
