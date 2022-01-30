@@ -2,7 +2,7 @@
 title: "Coronavirus variants predict infection severity"
 subtitle: "From raw data to a peer-reviewed publication in <1 year"
 author: Martin Skarzynski
-role: Lead Scientist, Booz Allen Hamilton
+role: AI Enginnering Manager, Booz Allen Hamilton
 company: '@BoozAllen'
 date: "`r Sys.Date()`"
 output:
@@ -89,11 +89,12 @@ class: top
 # Timeline
 
 - 2020-08: Start
-- 2020-12: [Manuscript](https://www.medrxiv.org/content/10.1101/2020.12.01.20242149v1) posted [medRxiv](https://www.medrxiv.org) preprint server `r emo::ji("popper")`
+- 2020-12: [Manuscript](https://www.medrxiv.org/content/10.1101/2020.12.01.20242149v1) posted on the [medRxiv](https://www.medrxiv.org) preprint server `r emo::ji("popper")`
 - 2020-12: Manuscript submitted to [Evolution, Medicine, and Public Health](https://academic.oup.com/emph)
 - 2021-02: Manuscript sent back for review 1
 - 2021-04: Manuscript sent back for review 2
 - 2021-06: Manuscript accepted `r emo::ji("confetti")`
+- 2021-11: Follow-up manuscript posted on the [medRxiv](https://www.medrxiv.org) preprint server `r emo::ji("popper")`
 
 
 <img src="images/medrxiv.png" width="750px"/>
