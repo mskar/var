@@ -1,9 +1,9 @@
 ---
 title: "Coronavirus variants predict infection severity"
 subtitle: "From raw data to a peer-reviewed publication in <1 year"
-author: Martin Skarzynski
-role: AI Enginnering Manager, Booz Allen Hamilton
-company: '@BoozAllen'
+author: Martin Skarzynski, PhD, MS, MPH
+role: Artificial Intelligence Enginnering Manager
+company: Booz Allen Hamilton
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -45,14 +45,8 @@ background-size: contain
 
 
 ---
+name: intro
 class: middle, center, inverse
-
-## .big-text[Greetings!]
-
----
-name: hello
-class: middle, center
-
 
 ### `r rmarkdown::metadata$author`
 
@@ -62,9 +56,11 @@ class: middle, center
 
 ### `r rmarkdown::metadata$company`
 
-[`r icons::fontawesome("github")` @mskar](https://github.com/mskar)
-[`r icons::fontawesome("twitter")` @marskar](https://twitter.com/marskar)
-[`r icons::fontawesome("link")` mskar.github.io](https://mskar.github.io)
+[`r fontawesome::fa("github")` @mskar](https://github.com/mskar)
+
+[`r fontawesome::fa("linkedin")` @mskar](https://linkedin.com/in/mskar)
+
+[`r fontawesome::fa("link")` mskar.github.io](https://mskar.github.io)
 
 ---
 class: top
@@ -72,9 +68,9 @@ class: top
 # Resources
 
 .pull-left[
-- [`r icons::fontawesome("github")` manuscript repo](https://github.com/Digital-Biobank/covid_variant_severity)
-- [`r icons::fontawesome("github")` slides repo](https://github.com/mskar/cat)
-- [`r icons::fontawesome("film")` live slides](https://mskar.github.io/cat)
+- [`r fontawesome::fa("github")` Manuscript repo](https://github.com/Digital-Biobank/covid_variant_severity)
+- [`r fontawesome::fa("github")` Slides repo](https://github.com/mskar/aws)
+- [`r fontawesome::fa("film")` Live slides](https://mskar.github.io/aws)
 
 <img src="images/repo1.png" width="750px"/>
 
@@ -85,123 +81,120 @@ class: top
 ]
 
 ---
+class: middle, inverse
 
 # Timeline
 
+.pull-left[
+<br>
 - 2020-08: Start
-- 2020-12: [Manuscript](https://www.medrxiv.org/content/10.1101/2020.12.01.20242149v1) posted on the [medRxiv](https://www.medrxiv.org) preprint server `r emo::ji("popper")`
-- 2020-12: Manuscript submitted to [Evolution, Medicine, and Public Health](https://academic.oup.com/emph)
-- 2021-02: Manuscript sent back for review 1
-- 2021-04: Manuscript sent back for review 2
-- 2021-06: Manuscript accepted `r emo::ji("confetti")`
-- 2021-11: Follow-up manuscript posted on the [medRxiv](https://www.medrxiv.org) preprint server `r emo::ji("popper")`
+- 2020-12: Manuscript posted`r emo::ji("popper")`
+- 2020-12: Manuscript submitted
+- 2021-02: Review 1
+- 2021-04: Review 2
+- 2021-06: Manuscript accepted`r emo::ji("confetti")`
+- 2021-11: Follow-up manuscript posted
+]
 
 
-<img src="images/medrxiv.png" width="750px"/>
-
----
-class: middle, center, inverse
-
-## .big-text[Overview]
-
-## Study design and results summary
+.pull-right[
+<img src="images/medrxiv.png" width="240px"/> <img src="images/medrxiv2.png" width="240px"/>
+<img src="images/emph.png" width="485px"/>
+]
 
 ---
-class: middle
+background-color: white
+background-image: url(images/s1.png)
+background-size: contain
+
+# Study design
+
+
+---
 background-color: white
 
-<img src="images/s1.png" width="950px"/>
+.pull-left[
+# Data pipeline
 
-```{r example, fig.align='center', fig.retina=3}
+```{r example, fig.retina=3}
 
 suppressPackageStartupMessages(library(widgetframe))
 
-l=DiagrammeR::mermaid("
-
-graph LR
+widgetframe::frameWidget(DiagrammeR::mermaid("
+graph TB
 D[FASTA files]-- Minimap2 --> E[VCF data]
 E -- SnpEff & SnpSift --> F[Annotated VCF data]
 F -- pandas.read_csv & pandas.pivot --> G[Wide dataframe]
 A[JSON files] -- json.loads --> B[patient metadata dictionary]
 B -- pandas.join --> C[Modeling Data]
 G -- pandas.join --> C
-")
-
-widgetframe::frameWidget(l)
+"))
 ```
+]
+
+.pull-right[
+# Patient outcomes
+<img src="images/s2.png" width="900px"/>
+]
 
 ---
-class: middle, center, inverse
+class: top, center
+background-color: white
 
-## .big-text[Figure S2]
+## Figure 1A: Probability of association with severe outcome across SARS-CoV-2 genome
 
-## Composition of patient outcome groups
-
----
-background-image: url(images/s2.png)
-background-size: contain
+<img src="images/1a.png" width="100%"/>
 
 ---
-class: middle, center, inverse
+class: top, center
+background-color: white
 
-## .big-text[Figure 1]
+## Figure 1B: Odds ratios of severe versus mild outcome across SARS-CoV-2 genome
 
-## Overview of SARS-CoV-2 variants selected from GISAID data
-
----
-class: middle, center, inverse
-
-## .big-text[Figure 1A]
-
-## Negative log10 p-values of variant association with Severe outcome group plotted against SARS-CoV-2 variant genome position
+<img src="images/1b.png" width="85%"/>
 
 ---
-background-image: url(images/1a.png)
-background-size: contain
+class: top, center
+background-color: white
+
+## Figure 1C: Odds ratios of severe versus mild outcome across variant frequency
+
+<img src="images/1c.png" width="60%"/>
 
 ---
-class: middle, center, inverse
+class: top, center
+background-color: white
 
-## .big-text[Figure 1B]
+## Figure 2: Nested logistic regression models
 
-## Log2 odds ratios of Severe versus Mild outcome groups plotted against SARS-CoV-2 variant genome position
-
----
-background-image: url(images/1b.png)
-background-size: contain
+<img src="images/2.png" width="65%"/>
 
 ---
-class: middle, center, inverse
+class: top, center
+background-color: white
 
-## .big-text[Figure 1C]
+## Figure S5: Logistic regression model learning curve
 
-## Log2 odds ratios of Severe versus Mild outcome groups plotted against log10 frequency of variants in the patient subpopulation
-
----
-background-image: url(images/1c.png)
-background-size: contain
+<img src="images/s5.png" width="90%"/>
 
 ---
-class: middle, center, inverse
 
-## .big-text[Figure 2]
+## Follow-up study design and results summary
 
-## Comparison of nested logistic regression models
 
----
-background-image: url(images/2.png)
-background-size: contain
-
----
-class: middle, center, inverse
-
-## .big-text[Figure S5]
-
-##  Logistic regression model learning curve
-
----
-background-image: url(images/s5.png)
-background-size: contain
+```{r example2, fig.align='center', fig.retina=3}
+suppressPackageStartupMessages(library(widgetframe))
+widgetframe::frameWidget(DiagrammeR::mermaid("
+graph TD
+A[Download USAFSAM Sequences from GISAID] --> B[Align and call variants]
+B --> C[Variant Scoring]
+D[Variants from Voss et al. with data for prediction] --> C
+C --> E[Sequence matrix for predictions]
+E --> F[Classify by predicted severity]
+F --> H[T-test: Mild vs. Severe <br> Correlation: PCR vs. probability]
+G[Gather diagnostic PCR data for samples] --> H
+"))
+```
 
 ---
 name: goodbye
@@ -225,11 +218,11 @@ to my co-authors:
 
 # Thank you!
 
-### Find me at...
+Please feel free to reach out...
 
-[`r icons::fontawesome("twitter")` @marskar](http://twitter.com/marskar)
-[`r icons::fontawesome("github")` @mskar](http://github.com/mskar)
-[`r icons::fontawesome("link")` mskar.github.io](https://mskar.github.io)
+[`r fontawesome::fa("github")` @mskar](https://github.com/mskar)
+[`r fontawesome::fa("linkedin")` @mskar](https://linkedin.com/in/mskar)
+[`r fontawesome::fa("link")` mskar.github.io](https://mskar.github.io)
 ]
 ]
 
