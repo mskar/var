@@ -57,13 +57,12 @@ pre code {
 
 /* link color */
 a, a > code {
-  color: #DD6164;
+  color: #6164CC;
 }
 
 
 :any-link {
-    color: #DD6164;
-    text-decoration: underline;
+    color: #6164CC;
 }
 
 

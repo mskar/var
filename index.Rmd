@@ -46,7 +46,7 @@ background-size: contain
 
 ---
 name: intro
-class: middle, center, inverse
+class: middle, center
 
 ### `r rmarkdown::metadata$author`
 
@@ -77,7 +77,7 @@ class: top
 ]
 
 .pull-right[
-<img src="images/repo.png" width="750px"/>
+<img src="images/repo.png" width="650px"/>
 ]
 
 ---
@@ -138,8 +138,7 @@ G -- pandas.join --> C
 ]
 
 ---
-class: top, center
-background-color: white
+class: top, center, inverse
 
 ## Figure 1A: Probability of association with severe outcome across SARS-CoV-2 genome
 
@@ -154,8 +153,7 @@ background-color: white
 <img src="images/1b.png" width="85%"/>
 
 ---
-class: top, center
-background-color: white
+class: top, center, inverse
 
 ## Figure 1C: Odds ratios of severe versus mild outcome across variant frequency
 
@@ -170,8 +168,7 @@ background-color: white
 <img src="images/2.png" width="65%"/>
 
 ---
-class: top, center
-background-color: white
+class: top, center, inverse
 
 ## Figure S5: Logistic regression model learning curve
 
@@ -198,7 +195,7 @@ G[Gather diagnostic PCR data for samples] --> H
 
 ---
 name: goodbye
-class: pink, bottom
+class: middle
 
 .pull-left[
 ### Sincere thanks
@@ -221,7 +218,9 @@ to my co-authors:
 Please feel free to reach out...
 
 [`r fontawesome::fa("github")` @mskar](https://github.com/mskar)
+
 [`r fontawesome::fa("linkedin")` @mskar](https://linkedin.com/in/mskar)
+
 [`r fontawesome::fa("link")` mskar.github.io](https://mskar.github.io)
 ]
 ]
