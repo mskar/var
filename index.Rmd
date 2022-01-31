@@ -175,6 +175,7 @@ class: top, center, inverse
 <img src="images/s5.png" width="90%"/>
 
 ---
+background-color: white
 
 ## Follow-up study design and results summary
 
