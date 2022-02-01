@@ -167,7 +167,7 @@ background-color: white
 
 ## Follow-up study design and results summary
 
-<img src="images/flow-chart2.png" width="90%"/>
+<img src="images/flow-chart2.png" width="60%"/>
 
 ---
 name: goodbye
