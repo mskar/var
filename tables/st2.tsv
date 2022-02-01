@@ -1,0 +1,41 @@
+Nucleic Acid 	 Amino acid 	 Type       	 Frequency 	 Odds ratio
+C29625T      	 S23F       	 Missense   	 0.0014    	 0.0090
+C1281T       	 A339V      	 Missense   	 0.0038    	 0.0210
+C5700A       	 A1812D     	 Missense   	 0.0153    	 0.0220
+G16945A      	 A5561T     	 Missense   	 0.0014    	 0.0230
+C10202T      	 L3313F     	 Missense   	 0.0011    	 0.0270
+G5554T       	 K1763N     	 Missense   	 0.0044    	 0.0410
+C9693T       	 A3143V     	 Missense   	 0.0014    	 0.0490
+G26233T      	            	 Intergenic 	 0.0017    	 0.0510
+C12003T      	 S3913L     	 Missense   	 0.0014    	 0.0570
+T3833G       	 F1190V     	 Missense   	 0.0008    	 0.0600
+C17440T      	 P5726S     	 Missense   	 0.0020    	 0.0700
+G20087C      	 G6608A     	 Missense   	 0.0011    	 0.0720
+C14757T      	 H4831H     	 Silent     	 0.0005    	 0.0760
+C8818T       	 C2851C     	 Silent     	 0.0011    	 0.0780
+C2558T       	 P765S      	 Missense   	 0.0032    	 0.0890
+C541T        	 L92L       	 Silent     	 0.0008    	 0.0900
+T9628C       	 S3121S     	 Silent     	 0.0005    	 0.0910
+T4092C       	 I1276T     	 Missense   	 0.0005    	 0.0960
+C3634T       	 N1123N     	 Silent     	 0.0124    	 0.0990
+G14181A      	 L4639L     	 Silent     	 0.0008    	 0.1050
+C9438T       	 T3058I     	 Missense   	 0.0026    	 1.8900
+C6040T       	 F1925F     	 Silent     	 0.0047    	 1.9400
+C25708T      	 L106F      	 Missense   	 0.0011    	 1.9460
+G21255C      	 A6997A     	 Silent     	 0.0011    	 2.0150
+T29148C      	 I292T      	 Missense   	 0.0274    	 2.3410
+T27299C      	 I33T       	 Missense   	 0.0268    	 2.4740
+C28657T      	 D128D      	 Silent     	 0.0165    	 2.5940
+G29616T      	 R20I       	 Missense   	 0.0115    	 2.6290
+C29870A      	            	 Intergenic 	 0.0059    	 2.7200
+C8139T       	 S2625F     	 Missense   	 0.0026    	 2.7200
+C10319T      	 L3352F     	 Missense   	 0.0041    	 2.9430
+C26735T      	 Y71Y       	 Silent     	 0.0841    	 3.0330
+C10188T      	 T3308I     	 Missense   	 0.0032    	 3.4270
+G29711T      	            	 Intergenic 	 0.0008    	 3.6330
+C23185T      	 F541F      	 Silent     	 0.0150    	 3.9230
+C6310A       	 S2015R     	 Missense   	 0.0484    	 4.0040
+G26144T      	 G251V      	 Missense   	 0.0295    	 4.3710
+C25549T      	 L53F       	 Missense   	 0.0050    	 4.8360
+C13620T      	 D4452D     	 Silent     	 0.0070    	 5.8040
+G25088T      	 V1176F     	 Missense   	 0.0366    	 49.0300

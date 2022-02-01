@@ -116,20 +116,8 @@ background-color: white
 .pull-left[
 # Data pipeline
 
-```{r example, fig.retina=3}
+<img src="images/flow-chart1.png" width="100%"/>
 
-suppressPackageStartupMessages(library(widgetframe))
-
-widgetframe::frameWidget(DiagrammeR::mermaid("
-graph TB
-D[FASTA files]-- Minimap2 --> E[VCF data]
-E -- SnpEff & SnpSift --> F[Annotated VCF data]
-F -- pandas.read_csv & pandas.pivot --> G[Wide dataframe]
-A[JSON files] -- json.loads --> B[patient metadata dictionary]
-B -- pandas.join --> C[Modeling Data]
-G -- pandas.join --> C
-"))
-```
 ]
 
 .pull-right[
@@ -179,20 +167,7 @@ background-color: white
 
 ## Follow-up study design and results summary
 
-
-```{r example2, fig.align='center', fig.retina=3}
-suppressPackageStartupMessages(library(widgetframe))
-widgetframe::frameWidget(DiagrammeR::mermaid("
-graph TD
-A[Download USAFSAM Sequences from GISAID] --> B[Align and call variants]
-B --> C[Variant Scoring]
-D[Variants from Voss et al. with data for prediction] --> C
-C --> E[Sequence matrix for predictions]
-E --> F[Classify by predicted severity]
-F --> H[T-test: Mild vs. Severe <br> Correlation: PCR vs. probability]
-G[Gather diagnostic PCR data for samples] --> H
-"))
-```
+<img src="images/flow-chart2.png" width="90%"/>
 
 ---
 name: goodbye
