@@ -106,13 +106,13 @@ class: middle, inverse
 background-color: white
 background-image: url(images/s1.png)
 background-size: contain
+class: top, center
 
 # Study design
 
 
 ---
-class: center
-background-color: white
+class: top, center
 
 # Data pipeline
 
@@ -120,49 +120,58 @@ background-color: white
 
 
 ---
-class: center
-background-color: white
+class: top, center, inverse
 
 # Patient outcomes
 
 <img src="images/s2.png" width="65%"/>
 
 ---
-class: top, center, inverse
+background-color: white
+class: top, center
 
 ## Figure 1A: Probability of association with severe outcome across SARS-CoV-2 genome
 
 <img src="images/1a.png" width="100%"/>
 
 ---
-class: top, center, inverse
+background-color: white
+class: top, center
 
-## Table 1: Highest and lowest severe outcome association probabilities
+## Table 1: Highest and lowest severe outcome association odds ratios
 
-<img src="images/ts1.png" width="70%"/>
+<img src="images/st1.png" width="60%"/>
 
 ---
-class: top, center
-background-color: white
+class: top, center, inverse
 
 ## Figure 1B: Odds ratios of severe versus mild outcome across SARS-CoV-2 genome
 
 <img src="images/1b.png" width="85%"/>
 
 ---
-class: top, center, inverse
+class: top, center
+background-color: white
 
 ## Figure 1C: Odds ratios of severe versus mild outcome across variant frequency
 
 <img src="images/1c.png" width="60%"/>
 
 ---
-class: top, center
+class: top, center,
 background-color: white
 
-## Figure 2: Nested logistic regression models
+## Figure 2: Nested model ROC curve
 
 <img src="images/2.png" width="65%"/>
+
+---
+background-color: white
+class: top, center
+
+## Table 2: Nested model performance assessment
+
+<img src="images/st3.png" width="80%"/>
 
 ---
 class: top, center, inverse
