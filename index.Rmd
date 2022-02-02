@@ -112,11 +112,25 @@ class: top, center
 
 
 ---
-class: top, center
+background-image: url("images/flow-chart1.png")
+background-size: 550px
+background-position: left bottom
+class: top
+background-color: white
 
 # Data pipeline
 
-<img src="images/flow-chart1.png" width="70%"/>
+.pull-right[
+
+- Obtain viral sequences from GISAID
+- Call and annotate variants
+- Standardize patient metadata
+- Combine
+    - Annotated variants
+    - Patient metadata
+
+<img src="images/Gisaid_logo.png" width="65%"/>
+]
 
 
 ---
@@ -150,8 +164,7 @@ class: top, center, inverse
 <img src="images/1b.png" width="85%"/>
 
 ---
-class: top, center
-background-color: white
+class: top, center, inverse
 
 ## Figure 1C: Odds ratios of severe versus mild outcome across variant frequency
 
@@ -182,10 +195,20 @@ class: top, center, inverse
 
 ---
 background-color: white
+background-image: url("images/flow-chart2.png")
+background-size: 650px
+background-position: left
 
-## Follow-up study design and results summary
 
-<img src="images/flow-chart2.png" width="60%"/>
+## Follow-up study
+
+.pull-right[
+- Demonstrated utility of the severity model in a new dataset
+- Included clinically-derived PCR measurements of viral load
+- Patients (n=716)
+  - with predicted severity score > 0.5
+  - had higher viral load (p=0.0017)
+]
 
 ---
 name: goodbye
