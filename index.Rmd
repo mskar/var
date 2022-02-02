@@ -69,8 +69,8 @@ class: top
 
 .pull-left[
 - [`r fontawesome::fa("github")` Manuscript repo](https://github.com/Digital-Biobank/covid_variant_severity)
-- [`r fontawesome::fa("github")` Slides repo](https://github.com/mskar/aws)
-- [`r fontawesome::fa("film")` Live slides](https://mskar.github.io/aws)
+- [`r fontawesome::fa("github")` Slides repo](https://github.com/mskar/var)
+- [`r fontawesome::fa("film")` Live slides](https://mskar.github.io/var)
 
 <img src="images/repo1.png" width="750px"/>
 
